@@ -9,10 +9,12 @@ from pportfolio.appportfolio.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 # servicio de ficheros estáticos durante el servidor
 from django.views.static import serve
+
 
 
 urlpatterns = [
@@ -42,3 +44,4 @@ urlpatterns = [
     #path('Signup/', views.Signup, name='Signup'),
     re_path(r'^login/$',auth_views.LoginView.as_view(template_name="registration/login.html"), name="login"),  #acceso al sistema
 ]
+
