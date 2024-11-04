@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <title>Iniciar Sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% endblock %}
+
+{% block content %}
+
+    <div class=""></div>
+    <main>
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-12 col-md-10 mx-auto my-auto">
+                    <div class="card auth-card">
+                        <!-- Background imagen con texto -->
+                        <div class="position-relative image-side-login">
+                            <p class="text-white h2">INICIAR SESIÓN</p>
+                            <p class="white mb-0">
+                                Use sus credenciales para ingresar.
+                                <br>Si no eres miembro &nbsp;
+                                <a href="{% url 'home' %}"
+                                    class="btn btn-primary btn-sm btn-shadow mt-1 btn-sm">Regístrate</a>
+                            </p>
+                        </div>
+                        <!-- Formulario de registro-->
+                        <div class="form-side">
+                            <div align="center">
+                                <a href="#">
+                                    <span class="logo-single"></span>
+                                </a>
+                            </div> 
+                            <form method='POST' action='{% url "Login" %}' >
+			                {% csrf_token %}
+                                <label class="form-group has-float-label mb-4">
+                                    <input class="form-control" type="text" name='username' id='username' placeholder='usuario' required />
+                                    <span>Nombre de usuario</span>
+                                </label>
+                                <label class="form-group has-float-label mb-4">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" type="password" id="password" placeholder=""
+                                            minlength="8" name='password' required />
+                                        <div class="input-group-append pointer" id="look-pass">
+                                            <span class="input-group-text glyph-icon simple-icon-eye"></span>
+                                        </div>
+                                    </div>
+                                    <span>Contraseña</span>
+                                </label>
+                                <div align="center">
+                                   <div class="row justify-content-end">
+                                       <div class="col-12">  
+										   <button type='submit' class="btn btn-primary btn-lg btn-shadow btn-sm">&nbsp; Iniciar Sesión &nbsp;</button>
+                                       </div>
+                                       <div class="col-12 mt-2">
+                                           <a href="#">¿Olvido su contraseña?</a>
+                                       </div>
+                                   </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Fin Formulario de registro-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin contenedor principal -->
+    </main>
+ 
+{% endblock content %}
+
+  {% block scripts %}
+
+       
+{% endblock scripts %}	   
